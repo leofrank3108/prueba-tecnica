@@ -14,8 +14,17 @@
                         </div>
                     @endif
 
-                    <div class="container">
-                    @foreach($users as $user)
+                    <tablet class="table">
+                     <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th colspan="2">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        @foreach($users as $user)
                         <div class="row row-cols-5">
                             <div class="col">{{$user->name}}</div>
                             <div class="col">{{$user->cedula}}</div>
@@ -24,7 +33,7 @@
                             <div class="col">
                                 <tr>
                                     <td>
-                                         <a href="#" class="btn btn-primary btn-sm">Editar</a>
+                                         <a href="{{route ('home.edit', $user)}}" class="btn btn-primary btn-sm">Editar</a>
                                     </td>
                                     <td>
                                     <form action="{{route ('home.destroy', $user)}}" method="POST">
@@ -40,7 +49,7 @@
                         </div>
                         </div>
                         @endforeach 
-                    </div>
+                    </tablet>
                 </div>
             </div>
         </div>

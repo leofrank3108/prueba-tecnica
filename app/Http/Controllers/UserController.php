@@ -20,4 +20,17 @@ class UserController extends Controller
         return back()->with('status','Eliminado con exito');
 
     }
+    public function edit(User $user)
+    {
+        return view('/edit', compact('user'));
+    }
+
+    public function update(Request $request, User $user)
+    {
+        //dd($request->all()  );
+        $user->update($request->all());
+       $user->save;
+        return back()->with('status', 'Actualizado con exito');
+        
+    }
 }

@@ -20,3 +20,5 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'UserController@user')->name('home');
 Route::delete('/home/{user}', 'UserController@destroy')->name('home.destroy');
+Route::get('/edit/{user}', 'UserController@edit')->name('home.edit');
+Route::put('/edit/{user}', 'UserController@update')->name('home.update');
